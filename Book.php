@@ -11,7 +11,9 @@ class Book
     function __construct($name,$author,$price,$QtyInStock)
     {
         $this->name = $name;
-        $this->author = $author;
+        //$this->author = $author;
+        $this->author = new Author();
+        $this->author->setName($author);
         $this->price = $price;
         $this->QtyInStock = $QtyInStock;
     }
@@ -23,7 +25,7 @@ class Book
 
     function getAuthor()
     {
-        return $this->author;
+        return $this->author->getName();
     }
 
     function getPrice()
