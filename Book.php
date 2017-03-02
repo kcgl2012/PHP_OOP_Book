@@ -1,4 +1,6 @@
 <?php
+require 'Author.php';
+
 class Book
 {
     private $name;
@@ -39,6 +41,10 @@ class Book
         return $this->QtyInStock;
     }
 
+    function setQtyInStock($QtyInStock)
+    {
+        $this->QtyInStock = $QtyInStock;
+    }
 }
 
 $book1 = new Book('Co gai nam ay chung toi cung theo duoi','Cuu Ba Dao',30.000,20);
@@ -53,4 +59,7 @@ $book1->setPrice(50.000);
 echo 'New Price :' . $book1->getPrice();
 echo '<br/>';
 echo 'Quantity In Stock : ' . $book1->getQtyInStock();
+$book1->setQtyInStock(50);
+echo '<br/>';
+echo 'New Quantity In Stock : ' . $book1->getQtyInStock();
 ?>
